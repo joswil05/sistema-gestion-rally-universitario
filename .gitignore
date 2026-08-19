@@ -42,6 +42,10 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 
+# Project specific non-runtime files
+docs/
+*.sqbpro
+
 # SQLite databases (optional, but keep repo clean if regenerated)
 # uncomment if you don't want to track local db:
 # *.db-shm

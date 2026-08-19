@@ -1,0 +1,48 @@
+## Visual Studio / C# .gitignore
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio files
+.vs/
+.vscode/
+
+# Rider files
+.idea/
+
+# Dotnet build artifacts
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Windows desktop ini files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# SQLite databases (optional, but keep repo clean if regenerated)
+# uncomment if you don't want to track local db:
+# *.db-shm
+# *.db-wal

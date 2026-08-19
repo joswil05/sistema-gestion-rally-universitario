@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1B3B3B2-081B-495B-A3BF-5C942D124ACD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SistemadeGestiondeRallyUniversitario</RootNamespace>
+    <AssemblyName>SistemadeGestiondeRallyUniversitario</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.119.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\IValidable.cs" />
+    <Compile Include="Models\Persona.cs" />
+    <Compile Include="Models\Carrera.cs" />
+    <Compile Include="Models\Estudiante.cs" />
+    <Compile Include="Models\Organizador.cs" />
+    <Compile Include="Models\Reto.cs" />
+    <Compile Include="Models\Inscripcion.cs" />
+    <Compile Include="Models\Resultado.cs" />
+    <Compile Include="Models\ClasificacionItem.cs" />
+    <Compile Include="Models\DashboardStats.cs" />
+    <Compile Include="Models\EquipoRallyItem.cs" />
+    <Compile Include="Services\CalculadorEstadisticasRally.cs" />
+    <Compile Include="Services\ReporteRallyService.cs" />
+    <Compile Include="Services\SeguridadHelper.cs" />
+    <Compile Include="Services\SesionActual.cs" />
+    <Compile Include="Services\ValidacionService.cs" />
+    <Compile Include="Data\IRepositorio.cs" />
+    <Compile Include="Data\DatabaseHelper.cs" />
+    <Compile Include="Data\CarreraRepository.cs" />
+    <Compile Include="Data\EstudianteRepository.cs" />
+    <Compile Include="Data\OrganizadorRepository.cs" />
+    <Compile Include="Data\RetoRepository.cs" />
+    <Compile Include="Data\InscripcionRepository.cs" />
+    <Compile Include="Data\ResultadoRepository.cs" />
+    <Compile Include="Data\ClasificacionRepository.cs" />
+    <Compile Include="Views\Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\PaginaInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\PaginaInicio.Designer.cs">
+      <DependentUpon>PaginaInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FormPantallaGigante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FormPantallaGigante.Designer.cs">
+      <DependentUpon>FormPantallaGigante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Modals\FormEditorEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Modals\FormEditorEstudiante.Designer.cs">
+      <DependentUpon>FormEditorEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Modals\FormInscribirReto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Modals\FormInscribirReto.Designer.cs">
+      <DependentUpon>FormInscribirReto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Modals\FormRegistrarTiempo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Modals\FormRegistrarTiempo.Designer.cs">
+      <DependentUpon>FormRegistrarTiempo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Modals\FormEditorCarrera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Modals\FormEditorCarrera.Designer.cs">
+      <DependentUpon>FormEditorCarrera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Modals\FormEditorReto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Modals\FormEditorReto.Designer.cs">
+      <DependentUpon>FormEditorReto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\UserControlInicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\UserControlInicio.Designer.cs">
+      <DependentUpon>UserControlInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\UserControlCarreras.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\UserControlCarreras.Designer.cs">
+      <DependentUpon>UserControlCarreras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\UserControlEstudiantes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\UserControlEstudiantes.Designer.cs">
+      <DependentUpon>UserControlEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\UserControlRetos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\UserControlRetos.Designer.cs">
+      <DependentUpon>UserControlRetos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\UserControlResultados.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\UserControlResultados.Designer.cs">
+      <DependentUpon>UserControlResultados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\UserControlClasificacion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\UserControlClasificacion.Designer.cs">
+      <DependentUpon>UserControlClasificacion.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\PaginaInicio.resx">
+      <DependentUpon>PaginaInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\UserControlInicio.resx">
+      <DependentUpon>UserControlInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\UserControlCarreras.resx">
+      <DependentUpon>UserControlCarreras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\UserControlEstudiantes.resx">
+      <DependentUpon>UserControlEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\UserControlRetos.resx">
+      <DependentUpon>UserControlRetos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\UserControlResultados.resx">
+      <DependentUpon>UserControlResultados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\UserControlClasificacion.resx">
+      <DependentUpon>UserControlClasificacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Content Include="rally_ulsa.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
